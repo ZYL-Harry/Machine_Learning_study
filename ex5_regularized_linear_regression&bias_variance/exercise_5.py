@@ -33,6 +33,7 @@ def visiualize_data(X, y, Xval, yval, Xtest, ytest):
     plt.show()
 
 # 1.3 regularized linear regression cost function
+# I do it with logistic regression actually, so the parts of cost function and gradient descent are a little bit wrong(logistic regression hypothesis with linear regression cost function and gradient descent), but, as the main idea is to train the bias vs. variance, so it doesn't matter much
 # 1.3.1 sigmoid function
 def sigmoid_function(z):
     f = 1 / (1 + np.exp(-z))
