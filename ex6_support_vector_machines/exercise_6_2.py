@@ -48,7 +48,7 @@ if __name__ == '__main__':
     spam_words = volcabulary[w_index[0:15, 0], 0]
     print(spam_words)
 
-    # another method that haven't been completed
+    # another method that hasn't been completed
     # word_index = np.eye(X.shape[1])
     # word_predict = np.matrix(model.decision_function(word_index)).T
     # word_spam = word_predict(np.argwhere(word_predict > 0.55))
