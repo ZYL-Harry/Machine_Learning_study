@@ -137,4 +137,13 @@ if __name__ == '__main__':
     print('F1 of the best threshold on the cross validation set is', F1)
     # pick out the anomalies
     pick_anomalies(X, p, threshold, mu, sigma2)
-
+    '''high dimensional dataset'''
+    path2 = 'D:/新建文件夹/机器学习/Machine_Learning_exercise/exercise_8/ex8/ex8data2.mat'
+    X2, Xval2, yval2 = read_data(path2)
+    mu_2, sigma2_2 = estimate_parameters(X2)
+    p_2 = estimate_probability(X2, mu_2, sigma2_2)
+    pval_2 = estimate_probability(Xval2, mu_2, sigma2_2)
+    threshold_2, F1_2 = select_threshold(yval2, pval_2)
+    print('the best threshold found with the cross validation is ', threshold_2)
+    anomaly_index_2 = np.matrix(np.argwhere(p_2 < threshold_2))
+    print('there are {0} anomalies'.format(int(anomaly_index_2.shape[0])))
